@@ -93,8 +93,11 @@ Create a variable computerSelection that stores the result of the getComputerCho
 
 */
 
-function playRound(humanChoice, computerChoice) {
+function playRound() {
+    let humanChoice = getHumanChoice();
     humanChoice = humanChoice.toLowerCase();
+    let computerChoice = getComputerChoice();
+
 
     if (computerChoice === humanChoice) {
         console.log('There is no winner.');
@@ -111,8 +114,6 @@ function playRound(humanChoice, computerChoice) {
     };
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
 playRound(humanSelection,computerSelection);
 console.log(humanScore, computerScore);
@@ -121,6 +122,8 @@ console.log(humanScore, computerScore);
 
 
 /*      Play the entire game
+
+
 
 Create a function that will :
     - declare score variables
@@ -133,10 +136,17 @@ Pseudocode:
 
 Create a playGame function:
     Create variables for either the computer and the human to keep track of their score.
-    Declare playRound function here
 
+    Declare playRound function here.
 
+    Call the playRound function 5 times with a loop.
 
+    Compare computerScore and humanScore:
+        If computerScore is higher:
+            log "Computer wins. Computer score is computerScore, and your score is humanScore"
+        Else:
+            log "You win!" Computer score is computerScore, and your score is humanScore"
+    
 
 */
 
