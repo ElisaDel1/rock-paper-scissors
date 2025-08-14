@@ -29,7 +29,6 @@ function getComputerChoice () {
     return computerChoice;
 }
 
-console.log(getComputerChoice());
 
 
 
@@ -48,8 +47,6 @@ function getHumanChoice () {
     let humanChoice = prompt('Please choose and write "rock", "paper" or "scissors"');
     return humanChoice;
 }
-
-console.log(getHumanChoice());
 
 
 
@@ -79,13 +76,13 @@ Pseudocode :
 Create a function playRound with the arguments humanChoice and computerChoice. This function will:
     Make the parameter humanChoice case-insensitive
 
-    If computer choice is the same as user choice:
+    If computer choice is the same as human choice:
         log "There is no winner"
-    else if (computerChoice is rock and userChoice is paper) or (computer choice is paper and userChoice is scissors) or (computerChoice is scissors and userChoice is rock)
+    else if (computerChoice is rock and humanChoice is paper) or (computer choice is paper and humanChoice is scissors) or (computerChoice is scissors and humanChoice is rock)
             log a string "You win! userChoice beats computerChoice"
             user score increments
     else:
-        log a string "You lose! computerChoice beats userChoice"
+        log a string "You lose! computerChoice beats humanChoice"
         computer score increments
 
 
@@ -96,3 +93,26 @@ Create a variable computerSelection that stores the result of the getComputerCho
 
 */
 
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+
+    if (computerChoice === humanChoice) {
+        console.log('There is no winner.');
+    } else if ((computerChoice === 'rock' && humanChoice === 'paper')
+    || (computerChoice === 'paper' && humanChoice === 'scissors')
+    || (computerChoice === 'scissors' && humanChoice === 'rock')) {
+        humanChoice = humanChoice[0].toUpperCase() + humanChoice.slice(1);
+        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+        humanScore++;
+    } else {
+        computerChoice = computerChoice[0].toUpperCase() + computerChoice.slice(1);
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}!`)
+        computerScore++;
+    };
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection,computerSelection);
+console.log(humanScore, computerScore);
