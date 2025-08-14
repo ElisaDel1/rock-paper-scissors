@@ -116,3 +116,27 @@ const computerSelection = getComputerChoice();
 
 playRound(humanSelection,computerSelection);
 console.log(humanScore, computerScore);
+
+
+
+
+/*      Play the entire game
+
+Create a function that will :
+    - declare score variables
+    - declare playRound function
+    - call 5 times the playRound function.
+    - keep track of the scores
+    - log the winner after the 5 rounds
+
+Pseudocode:
+
+Create a playGame function:
+    Create variables for either the computer and the human to keep track of their score.
+    Declare playRound function here
+
+
+
+
+*/
+
