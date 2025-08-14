@@ -15,7 +15,7 @@ Create a variable computerChoice
 
 
 function getComputerChoice () {
-    let computerChoice
+    let computerChoice;
     let randomNumber = Math.floor(Math.random() * 3);
 
     if (randomNumber === 0) {
@@ -50,3 +50,16 @@ function getHumanChoice () {
 }
 
 console.log(getHumanChoice());
+
+
+
+/*      Keep track of scores
+
+Create variables for either the computer and the human to keep track of their score.
+
+*/
+
+let humanScore = 0;
+let computerScore = 0;
+
+
