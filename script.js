@@ -63,3 +63,36 @@ let humanScore = 0;
 let computerScore = 0;
 
 
+
+/*      Play a single round of the game
+
+We need to create a function that will :
+    - take the choices of the computer and the human as arguments
+    - make the choices case-insensitive
+    - compare the answers and decide who is the winner
+    - log who is the winner
+    - increment the score of the winner
+
+
+Pseudocode :
+
+Create a function playRound with the arguments humanChoice and computerChoice. This function will:
+    Make the parameter humanChoice case-insensitive
+
+    If computer choice is the same as user choice:
+        log "There is no winner"
+    else if (computerChoice is rock and userChoice is paper) or (computer choice is paper and userChoice is scissors) or (computerChoice is scissors and userChoice is rock)
+            log a string "You win! userChoice beats computerChoice"
+            user score increments
+    else:
+        log a string "You lose! computerChoice beats userChoice"
+        computer score increments
+
+
+
+Create a variable humanSelection that stores the result of the getHumanChoice function.
+
+Create a variable computerSelection that stores the result of the getComputerChoice function.
+
+*/
+
