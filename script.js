@@ -56,8 +56,6 @@ Create variables for either the computer and the human to keep track of their sc
 
 */
 
-let humanScore = 0;
-let computerScore = 0;
 
 
 
@@ -115,10 +113,6 @@ function playRound() {
 }
 
 
-playRound(humanSelection,computerSelection);
-console.log(humanScore, computerScore);
-
-
 
 
 /*      Play the entire game
@@ -149,4 +143,40 @@ Create a playGame function:
     
 
 */
+
+
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound() {
+        let humanChoice = getHumanChoice();
+        humanChoice = humanChoice.toLowerCase();
+        let computerChoice = getComputerChoice();
+
+
+        if (computerChoice === humanChoice) {
+            console.log(`There is no winner. Your choice and the computer choice are the same (${humanChoice}).`);
+        } else if ((computerChoice === 'rock' && humanChoice === 'paper')
+        || (computerChoice === 'paper' && humanChoice === 'scissors')
+        || (computerChoice === 'scissors' && humanChoice === 'rock')) {
+            humanChoice = humanChoice[0].toUpperCase() + humanChoice.slice(1);
+            console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+            humanScore++;
+        } else {
+            computerChoice = computerChoice[0].toUpperCase() + computerChoice.slice(1);
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}!`)
+            computerScore++;
+        };
+    }
+
+    for (let i = 0; i < 5; i++) {
+        playRound();
+    }
+
+    if (computerScore > humanScore) {
+        
+    }
+
+}
 
