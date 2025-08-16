@@ -138,8 +138,10 @@ Create a playGame function:
     Compare computerScore and humanScore:
         If computerScore is higher:
             log "Computer wins. Computer score is computerScore, and your score is humanScore"
-        Else:
+        Else if humanScore is higher:
             log "You win!" Computer score is computerScore, and your score is humanScore"
+        Else if computerScore is equal to humanScore:
+            log "Equality, you both get the score of humanScore"
     
 
 */
@@ -175,8 +177,13 @@ function playGame() {
     }
 
     if (computerScore > humanScore) {
-        
-    }
+        console.log(`Computer wins! Computer score is ${computerScore}, while yours is ${humanScore}.`);
+    } else if (humanScore > computerScore) {
+        console.log(`You win! Computer score is ${computerScore}, and yours is ${humanScore}.`)
+    } else if (humanScore === computerScore) {
+        console.log(`Equality, you both get the score of ${humanScore}.`)
+    };
 
 }
 
+playGame();
